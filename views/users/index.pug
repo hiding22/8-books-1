@@ -1,0 +1,16 @@
+a(href="/users/create") New user
+
+form(action="/users/search", method="GET")
+	input(type="text", name="q")
+	button Search
+
+ul
+	each user in users
+		li
+			span= user.name
+			span &nbsp;
+			a(href="/users/" + user.id +"/view") Xem
+			span &nbsp;
+			a(href="/users/update/" + user.id) Cập nhật
+			span &nbsp;
+			a(href="/users/" + user.id +"/delete") Xóa
